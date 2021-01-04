@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <title>Number Plate Detection</title>
+
+  <!-- CSS  -->
+  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center black-text">Number Plate Detection</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Number Plate Detection using Place Recogizer<br></h5>
+      </div>
+
+      <div class="row">
+        <form action='/getplate' method="POST" enctype="multipart/form-data" class="col s12">
+          <div class="row">
+            <div class="input-field">
+              <label for="first_name"><b>Upload File</b></label>
+              <br>
+              <br>
+              <input id="plate" name='plate' type="file" class="validate">
+            </div>
+          </div>
+          <br>
+          <div class="row center">
+
+            <button type="submit" class="btn-large waves-effect waves-light black">Predict Number Plate</button>
+          </div>
+        </form>
+      </div>
+
+      <br>
+      <h4 align="center" style="color: black"> <b>{{file_success}}</b></h4>
+      <h4 align="center" style="color: red"> <b>{{error}}</b></h4>
+      <br>
+
+    </div>
+  </div>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src=".js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+</body>
+
+</html>
