@@ -22,7 +22,7 @@ def getno():
         upload = plate.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         regions = ['in']
         with open('static/uploads/'+filename, 'rb') as fp:
-            response = requests.post('https://api.platerecognizer.com/v1/plate-reader/', data=dict(regions=regions), files=dict(upload=fp), headers={'Authorization': 'Token 7c9ced42ce6ac2938556d5a4e8c52422ad1b5cea'})
+            response = requests.post('https://api.platerecognizer.com/v1/plate-reader/', data=dict(regions=regions), files=dict(upload=fp), headers={'Authorization': 'Token API_TOKEN'})
         data = response.json()
         for plate in data['results']:
             plate_data = plate['plate']
